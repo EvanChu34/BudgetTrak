@@ -3,6 +3,9 @@
     "short_name": "",
     "icon": [
 
-    ]
-
+    ],
+    "theme":"",
+    "background_color":"",
+    "display":"standalone"
+    
 }
