@@ -16,6 +16,16 @@ request.onsuccess = event => {
     if (navigator.onLine) {
       checkDatabase();
     }
-  };
+};
   
-  request.onerror = event => console.error(event);
+request.onerror = event => console.error(event);
+
+function checkDatabase () {
+    const db = request.result;
+}
+
+function saveRecord () {
+
+}
+
+window.addEventListener(`online`, checkDatabase);
