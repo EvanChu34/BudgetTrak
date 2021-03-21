@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const FILES_TO_CACHE = [
 "/",
 "/index.html",
@@ -36,6 +38,31 @@ self.addEventListener("activate", (event) => {
   )
 })
 
+self.addEventListener('fetch', (event) => { 
+  if(event.request.url.includes('/api/')) {
+    event.respondWith(
+      caches
+      .open(DATA_CACHE_NAME)
+      .then((cache) =>{
+        fetch(event.request)
+        .then((response) => {
+          if (response.status === 200){
+            cache.put(event.request.url, response.clone())
+          }
+          return response
+        })
+        .catch(() => cache.match(event.request))
+      })
+    )
+  }
+  else {
+    event.respondWith(
+      caches
+      .match(event.request)
+      .then((response) => response || fetch(event.request))
+    )
+  }
+})
 
 
 
