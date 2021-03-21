@@ -1,8 +1,12 @@
 {
-    "name": " ",
-    "short_name": "",
+    "name": "BudgetTrak",
+    "short_name": "BudgetTrak",
     "icon": [
-
+        {
+            "src": "",
+            "size":"",
+            "type":""
+        }
     ],
     "theme":"",
     "background_color":"",
