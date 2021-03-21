@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const pendingObjectStoreName = `pending`;
 
 const request = indexedDB.open(`budget`, 1);
@@ -36,16 +38,21 @@ function checkDatabase () {
                    "Content-Type": `application/json` 
                 }
             })
-            .then()
-            .then()
-
+            .then(response => response.json())
+            .then(() => {
+                transaction = db.transaction([pendingObjectStoreName], `readwrite`);
+                store = transaction.objectStore(pendingObjectStoreName);
+                store.clear();
+            })
         }
     }
-
 }
 
 function saveRecord () {
-
+    const db = request.result;
+    const transaction = db.transaction([pendingObjectStoreName], `readwrite`)
+    const store = transaction.objectStore(pendingObjectStoreName);
+    store.add(record);
 }
 
 window.addEventListener(`online`, checkDatabase);
