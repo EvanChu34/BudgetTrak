@@ -3,13 +3,13 @@
     "short_name": "BudgetTrak",
     "icon": [
         {
-            "src": "",
-            "size":"",
-            "type":""
+            "src":"/icons/icon-192x192.png",
+            "size":"192x192",
+            "type":"image/png"
         }
     ],
-    "theme":"",
-    "background_color":"",
+    "theme_color":"#ffffff",
+    "background_color":"#ffffff",
+    "start_url":"https://pure-castle-20532.herokuapp.com/",
     "display":"standalone"
-    
 }
