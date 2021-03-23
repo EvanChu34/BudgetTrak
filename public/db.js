@@ -1,4 +1,4 @@
-
+"use strict";
 const pendingObjectStoreName = `pending`;
 
 const request = indexedDB.open(`budget`, 1);

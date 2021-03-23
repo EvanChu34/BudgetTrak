@@ -1,4 +1,4 @@
-const { response } = require("express");
+"use strict";
 
 const FILES_TO_CACHE = [
 "/",
@@ -6,6 +6,7 @@ const FILES_TO_CACHE = [
 "/db.js",
 "/index.js",
 "/manifest.webamainfest",
+"/icons/icons-192x192.png",
 "/style.css"
 ];
 
