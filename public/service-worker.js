@@ -1,6 +1,7 @@
 "use strict";
 
 const FILES_TO_CACHE = [
+"/",
 "/index.html",
 "/db.js",
 "/index.js",

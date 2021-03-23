@@ -31,6 +31,7 @@ https://pure-castle-20532.herokuapp.com/
 
 ## Pictures/Gif of Application
 
+![](public/assets/BudgetTrakDemo.gif)
 
 ---------------------------	
 
