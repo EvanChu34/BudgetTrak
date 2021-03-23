@@ -12,13 +12,20 @@
 ---------------------------	
 
 ## About
-
+Budget Trak is an application that anyone can use. The application tracks the users personal finances. 
+When the user enters the application, they are presented with an option with inputing an entry. The user
+can name the transaction as well as the transactions amount. The user can then choose to either add those funds
+or to subtract those funds, depending on what the user wants to do. The transactions and the amounts are then logged 
+on a list. They are also logged on graph so the user can see examine their spending habbits. The application also 
+tells the user what their total is on the top of the application
 
 ---------------------------
 
 ## Live Application
 
 You can find the live application here: 
+
+https://pure-castle-20532.herokuapp.com/
 
 ---------------------------
 
@@ -28,12 +35,12 @@ You can find the live application here:
 ---------------------------	
 
 ## Getting Started 
-Before you start, you must install a few things:
-* 
-* 
-* 
-* 
-* 
+Before you start, you need a few things:
+* Service-worker
+* Manifest.webmainfest
+* NPM express
+* Compression
+* Mongoose
 
 ---------------------------	
 
