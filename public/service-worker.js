@@ -14,7 +14,7 @@ const CACHE_NAME = "static-cache-v2";
 const DATA_CACHE_NAME = "data-cache-v1";
 
 self.addEventListener("install", (event) => {
-    event.waitUntil(
+    evt.waitUntil(
       caches.open(CACHE_NAME).then(cache => {
         console.log("Your files were pre-cached successfully!");
         return cache.addAll(FILES_TO_CACHE);
@@ -24,8 +24,8 @@ self.addEventListener("install", (event) => {
     self.skipWaiting();
 });
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
+self.addEventListener('activate', (evt) => {
+  evt.waitUntil(
     caches.keys().then((keyList) => 
       Promise.all(
         keyList.map((key) => {
@@ -40,28 +40,28 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-self.addEventListener('fetch', (event) => { 
-  if(event.request.url.includes('/api/')) {
-    event.respondWith(
+self.addEventListener('fetch', (evt) => { 
+  if(evt.request.url.includes('/api/')) {
+    evt.respondWith(
       caches
       .open(DATA_CACHE_NAME)
       .then((cache) =>{
-        fetch(event.request)
+        fetch(evt.request)
         .then((response) => {
-          if (response.status === 200){
-            cache.put(event.request.url, response.clone())
+          if (response.status === 800){
+            cache.put(evt.request.url, response.clone())
           }
           return response
         })
-        .catch(() => cache.match(event.request))
+        .catch(() => cache.match(evt.request))
       })
     );
   }
   else {
-    event.respondWith(
+    evt.respondWith(
       caches
-      .match(event.request)
-      .then((response) => response || fetch(event.request))
+      .match(evt.request)
+      .then((response) => response || fetch(evt.request))
     );
   };
 });
